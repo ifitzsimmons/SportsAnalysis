@@ -7,36 +7,36 @@ import sys
 def add_arguments():
 	name_group = parser.add_mutually_exclusive_group()
 	name_group.add_argument("-i", "--player-id", 
-													help=("Print the player id in the output. This is "
-																"the default."),
+					help=("Print the player id in the output. This is "
+					"the default."),
                     			action="store_true")
 	name_group.add_argument("-n", "--name", 
-													help=('Print the player name as "nameFirst nameLast" '
-																'instead of the player id.'),
-			                    action="store_true")
+					help=('Print the player name as "nameFirst nameLast" '
+					'instead of the player id.'),
+			                action="store_true")
 	name_group.add_argument("-g", "--given-name", 
-													help=('Print the player name  as "nameGiven" instead '
-																'of the player id'),
+					help=('Print the player name  as "nameGiven" instead '
+					'of the player id'),
                     			action="store_true")
 
 	stat_group = parser.add_mutually_exclusive_group()
 	stat_group.add_argument("-b", "--batting-avg",
-													help=("Print the player batting average. This is the"
-																" default"),
-  												action="store_true")
+					help=("Print the player batting average. This is the"
+					" default"),
+  					action="store_true")
 	stat_group.add_argument("-a", "--at-bats-per-home-run", 
-													help="Print the player at bats per home run.",
+					help="Print the player at bats per home run.",
                     			action="store_true")
 
 	parser.add_argument("-t", "--top", type=int, default=5,
-											help=("Print the top NUM players for the given statistic. "
-														"The default is 5."))
+					help=("Print the top NUM players for the given statistic. "
+					"The default is 5."))
 	parser.add_argument("-s", "--skip", type=int, default=0,
-											help=("Skip the top NUM players before printing. The default"
-														" is 0."))
+					help=("Skip the top NUM players before printing. The default"
+					" is 0."))
 	parser.add_argument("-m", "--minimum-at-bats", type=int, default=3000,
-											help=("The minimum NUM of at bats for a player to have a "
-														"qualifying score. The default is 3000."))
+					help=("The minimum NUM of at bats for a player to have a "
+					"qualifying score. The default is 3000."))
 
 def validate_career_stats():
 	'''This function ensures that the data grouping occured without error 
