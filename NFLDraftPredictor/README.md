@@ -16,5 +16,5 @@ To run this script you will need at least Python 3.6
 
 If Python 3.7 is installed
 ```console
-$ python3 baseballStats.py
+$ python3 get_draft_results_and_stats.py
 ```
